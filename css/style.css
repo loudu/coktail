@@ -139,7 +139,7 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 60% 35%;
+  object-position: 60% center;
 }
 
 .heros::after {
@@ -477,4 +477,13 @@ h1, h2, h3 {
   .cartes { grid-template-columns: 1fr; }
   .heros__logo { width: 88px; height: 88px; }
   .a-la-une { padding: 72px 0; }
+}
+
+@media (max-width: 800px) {
+  .heros__image { object-position: 55% center; }
+  .heros::after {
+    background:
+      linear-gradient(90deg, rgba(5,5,5,.85) 0%, rgba(5,5,5,.55) 70%, rgba(5,5,5,.4) 100%),
+      linear-gradient(0deg, var(--noir) 0%, transparent 30%);
+  }
 }
