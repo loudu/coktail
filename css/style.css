@@ -270,7 +270,7 @@ h1, h2, h3 {
 .carte:hover .medaillon img { transform: scale(1.08); }
 
 .carte h3 { font-size: 1.05rem; text-transform: uppercase; }
-.carte p { margin: 0; color: var(--gris); font-size: 1.02rem; line-height: 1.5; }
+.carte p { flex-grow: 1; margin: 0; color: var(--gris); font-size: 1.02rem; line-height: 1.5; }
 
 /* --------------------------------------------------------------------------
    Le coktail du mois
@@ -321,7 +321,7 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 70%;
 }
 .bandeau::after {
   content: "";
@@ -332,15 +332,15 @@ h1, h2, h3 {
     linear-gradient(90deg, rgba(5,5,5,.6) 0%, transparent 30%, transparent 70%, rgba(5,5,5,.75) 100%);
 }
 .bandeau__titre {
-  position: absolute;
-  z-index: 1;
-  left: 0; right: 0; bottom: 48px;
+  position: relative;
+  margin-top: -40px;
+  padding: 0 16px;
   text-align: center;
 }
 .bandeau__titre h1 { font-size: clamp(2rem, 5vw, 3.6rem); text-transform: uppercase; }
 .bandeau__titre p { margin: 6px 0 0; color: var(--or-clair); font-style: italic; font-size: 1.25rem; }
 
-.recette { padding: 64px 0 120px; }
+.recette { padding: 48px 0 120px; }
 
 .bloc {
   display: grid;
@@ -486,4 +486,8 @@ h1, h2, h3 {
       linear-gradient(90deg, rgba(5,5,5,.85) 0%, rgba(5,5,5,.55) 70%, rgba(5,5,5,.4) 100%),
       linear-gradient(0deg, var(--noir) 0%, transparent 30%);
   }
+}
+
+@media (max-width: 800px) {
+  .bandeau img { object-position: 45% 70%; }
 }
