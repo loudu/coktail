@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coktail Party — Recettes de cocktails</title>
+  <meta name="description" content="Coktail Party : recettes de cocktails, bars, matériel, alcools et softs.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <div class="conteneur">
+      <span></span>
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav__bouton" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+          <svg class="icone-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icone-fermer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <ul class="nav__liste" id="menu">
+          <li><a href="recette.html">Recettes</a></li>
+          <li><a href="#bars">Bars</a></li>
+          <li><a href="#materiels">Matériels</a></li>
+          <li><a href="#alcool">Alcool</a></li>
+          <li><a href="#soft">Soft</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Héros -->
+    <section class="heros">
+      <img class="heros__image" src="images/blue-margarita.jpg" alt="">
+      <div class="conteneur heros__contenu">
+        <img class="heros__logo" src="images/logo.png" alt="Logo Coktail Party">
+        <h1>Coktail<br>Party</h1>
+        <p class="heros__accroche">Recettes, bars et secrets de mixologie pour des soirées qui pétillent.</p>
+        <a class="bouton bouton--contour" href="#a-la-une">Découvrir</a>
+      </div>
+    </section>
+
+    <!-- À la une -->
+    <section class="a-la-une" id="a-la-une">
+      <div class="conteneur">
+        <h2 class="titre-section">À la une</h2>
+        <div class="cartes">
+          <article class="carte apparition">
+            <div class="medaillon"><img src="images/blue-margarita.jpg" alt="Blue Margarita" loading="lazy"></div>
+            <h3>Blue Margarita</h3>
+            <p>Tequila, curaçao bleu et citron vert, sur un givrage au sel.</p>
+            <a class="bouton" href="recette.html">Voir la recette</a>
+          </article>
+          <article class="carte apparition">
+            <div class="medaillon"><img src="images/blue-margarita.jpg" alt="Blue Lagoon" loading="lazy" style="object-position: 70% 30%"></div>
+            <h3>Blue Lagoon</h3>
+            <p>Vodka, curaçao et limonade : le grand bleu dans un verre.</p>
+            <a class="bouton" href="recette.html">Voir la recette</a>
+          </article>
+          <article class="carte apparition">
+            <div class="medaillon"><img src="images/blue-margarita.jpg" alt="Mojito bleu" loading="lazy" style="object-position: 80% 22%"></div>
+            <h3>Mojito Bleu</h3>
+            <p>Rhum blanc, menthe fraîche et une touche de curaçao.</p>
+            <a class="bouton" href="recette.html">Voir la recette</a>
+          </article>
+          <article class="carte apparition">
+            <div class="medaillon"><img src="images/blue-margarita.jpg" alt="Lagon virgin" loading="lazy" style="object-position: 45% 50%"></div>
+            <h3>Lagon Virgin</h3>
+            <p>Sirop de curaçao sans alcool, citron vert et eau pétillante.</p>
+            <a class="bouton" href="recette.html">Voir la recette</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Le coktail du mois -->
+    <section class="du-mois">
+      <div class="du-mois__image">
+        <img src="images/blue-margarita.jpg" alt="Blue Margarita garnie d'une rondelle de citron vert et de menthe" loading="lazy">
+      </div>
+      <div class="du-mois__texte apparition">
+        <h2 class="titre-section">Le coktail du mois</h2>
+        <h3>Blue Margarita</h3>
+        <p>Cousine électrique de la margarita classique, la Blue Margarita troque le triple sec contre le curaçao bleu. Le résultat : un cocktail d'un bleu profond, frais et légèrement amer, qui garde tout le caractère de la tequila.</p>
+        <p>Servie frappée dans un verre à margarita givré au sel, elle se pare d'une rondelle de citron vert et de quelques feuilles de menthe pour une touche végétale.</p>
+        <p>Facile à réaliser, elle ne demande qu'un shaker, des glaçons et une bonne dose de bonne humeur.</p>
+        <a class="bouton bouton--contour" href="recette.html">Voir la recette</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <img src="images/logo-contour.png" alt="Coktail Party">
+      <ul class="pied__liens">
+        <li><a href="recette.html">Recettes</a></li>
+        <li><a href="#bars">Bars</a></li>
+        <li><a href="#materiels">Matériels</a></li>
+        <li><a href="#alcool">Alcool</a></li>
+        <li><a href="#soft">Soft</a></li>
+      </ul>
+      <small>L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

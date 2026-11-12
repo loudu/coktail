@@ -1,0 +1,480 @@
+/* ==========================================================================
+   Coktail Party — feuille de style
+   ========================================================================== */
+
+:root {
+  --noir: #050505;
+  --noir-doux: #0d0c0a;
+  --or: #b8963e;
+  --or-clair: #d9bb6a;
+  --blanc: #f5f1e8;
+  --gris: #b9b4a8;
+  --titre: "Cinzel Decorative", "Cinzel", Georgia, serif;
+  --texte: "Cormorant Garamond", Georgia, serif;
+  --largeur: 1200px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--noir);
+  color: var(--blanc);
+  font-family: var(--texte);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3 {
+  font-family: var(--titre);
+  font-weight: 700;
+  letter-spacing: .06em;
+  margin: 0;
+}
+
+.conteneur {
+  width: min(var(--largeur), 100% - 32px);
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Navigation
+   -------------------------------------------------------------------------- */
+
+.entete {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  padding: 28px 0;
+}
+
+.entete .conteneur {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.entete__logo { display: flex; align-items: center; gap: 12px; }
+.entete__logo img { width: 64px; height: 64px; }
+.entete__logo span {
+  font-family: var(--titre);
+  font-size: .8rem;
+  line-height: 1.2;
+  letter-spacing: .15em;
+}
+
+.nav { display: flex; flex-direction: column; align-items: flex-end; gap: 22px; }
+
+.nav__bouton {
+  display: none;
+  background: none;
+  border: 0;
+  color: var(--blanc);
+  cursor: pointer;
+  padding: 6px;
+}
+.nav__bouton svg { width: 28px; height: 28px; }
+.nav__bouton .icone-fermer { display: none; }
+
+.nav__liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav__liste a {
+  font-family: var(--titre);
+  font-size: 1.05rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color .25s;
+}
+.nav__liste a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: var(--or);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s;
+}
+.nav__liste a:hover,
+.nav__liste a[aria-current="page"] { color: var(--or-clair); }
+.nav__liste a:hover::after,
+.nav__liste a[aria-current="page"]::after { transform: scaleX(1); }
+
+/* --------------------------------------------------------------------------
+   Héros — page d'accueil
+   -------------------------------------------------------------------------- */
+
+.heros {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--noir);
+}
+
+.heros__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 35%;
+}
+
+.heros::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5,5,5,.95) 0%, rgba(5,5,5,.55) 40%, rgba(5,5,5,.2) 65%, rgba(5,5,5,.85) 100%),
+    linear-gradient(0deg, var(--noir) 0%, transparent 25%);
+}
+
+.heros__contenu {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 40px;
+}
+
+.heros__logo {
+  width: 120px;
+  height: 120px;
+  background: #000;
+}
+
+.heros h1 {
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.heros__accroche {
+  max-width: 34ch;
+  color: var(--gris);
+  font-size: 1.3rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Boutons
+   -------------------------------------------------------------------------- */
+
+.bouton {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--titre);
+  font-size: .75rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--noir);
+  background: var(--blanc);
+  padding: 8px 18px;
+  border: 1px solid var(--blanc);
+  transition: background .25s, color .25s, border-color .25s;
+}
+.bouton:hover { background: var(--or); border-color: var(--or); color: var(--noir); }
+
+.bouton--contour { background: transparent; color: var(--blanc); border-color: var(--or); }
+.bouton--contour:hover { background: var(--or); }
+
+/* --------------------------------------------------------------------------
+   Titres de section
+   -------------------------------------------------------------------------- */
+
+.titre-section {
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  text-transform: uppercase;
+  margin-bottom: 56px;
+}
+.titre-section::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin: 18px auto 0;
+  background: var(--or);
+}
+
+/* --------------------------------------------------------------------------
+   À la une
+   -------------------------------------------------------------------------- */
+
+.a-la-une {
+  padding: 96px 0;
+  background: var(--noir) url("../images/motif.webp") center / 770px auto repeat;
+  border-block: 1px solid rgba(184,150,62,.25);
+}
+
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.carte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 28px 18px 32px;
+  background: rgba(5,5,5,.72);
+  border: 1px solid rgba(184,150,62,.2);
+  transition: transform .35s, border-color .35s;
+}
+.carte:hover { transform: translateY(-6px); border-color: var(--or); }
+
+.carte .bouton { align-self: center; }
+
+.medaillon {
+  width: 150px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 4px solid var(--or);
+  overflow: hidden;
+  box-shadow: 0 0 0 6px rgba(184,150,62,.15), 0 10px 30px rgba(0,0,0,.6);
+  flex-shrink: 0;
+}
+.medaillon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+.carte:hover .medaillon img { transform: scale(1.08); }
+
+.carte h3 { font-size: 1.05rem; text-transform: uppercase; }
+.carte p { margin: 0; color: var(--gris); font-size: 1.02rem; line-height: 1.5; }
+
+/* --------------------------------------------------------------------------
+   Le coktail du mois
+   -------------------------------------------------------------------------- */
+
+.du-mois {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--noir);
+}
+
+.du-mois__image { min-height: 640px; position: relative; overflow: hidden; }
+.du-mois__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.du-mois__texte {
+  padding: 96px clamp(24px, 6vw, 96px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+.du-mois__texte .titre-section { text-align: left; margin-bottom: 18px; }
+.du-mois__texte .titre-section::after { margin-left: 0; }
+.du-mois__texte p { margin: 0; color: var(--gris); }
+.du-mois__texte h3 { font-size: 1.4rem; color: var(--or-clair); }
+
+/* --------------------------------------------------------------------------
+   Page interne
+   -------------------------------------------------------------------------- */
+
+.bandeau {
+  position: relative;
+  height: 62vh;
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--noir);
+}
+.bandeau img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.bandeau::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, var(--noir) 0%, rgba(5,5,5,.2) 45%, rgba(5,5,5,.6) 100%),
+    linear-gradient(90deg, rgba(5,5,5,.6) 0%, transparent 30%, transparent 70%, rgba(5,5,5,.75) 100%);
+}
+.bandeau__titre {
+  position: absolute;
+  z-index: 1;
+  left: 0; right: 0; bottom: 48px;
+  text-align: center;
+}
+.bandeau__titre h1 { font-size: clamp(2rem, 5vw, 3.6rem); text-transform: uppercase; }
+.bandeau__titre p { margin: 6px 0 0; color: var(--or-clair); font-style: italic; font-size: 1.25rem; }
+
+.recette { padding: 64px 0 120px; }
+
+.bloc {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  align-items: center;
+  gap: clamp(32px, 6vw, 88px);
+  padding: 56px 0;
+  max-width: 980px;
+  margin-inline: auto;
+}
+.bloc + .bloc { border-top: 1px solid rgba(184,150,62,.2); }
+.bloc--inverse { grid-template-columns: 1fr 240px; }
+.bloc--inverse .medaillon { order: 2; }
+
+.bloc .medaillon { width: 240px; }
+
+.bloc h2 { font-size: 1.5rem; text-transform: uppercase; margin-bottom: 16px; color: var(--or-clair); }
+.bloc p { margin: 0 0 14px; color: var(--gris); }
+
+.ingredients { list-style: none; margin: 0; padding: 0; }
+.ingredients li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px dotted rgba(184,150,62,.35);
+  color: var(--blanc);
+}
+.ingredients li span:last-child { color: var(--or-clair); white-space: nowrap; }
+
+.etapes { margin: 0; padding-left: 1.4em; color: var(--gris); }
+.etapes li { padding-left: 6px; margin-bottom: 10px; }
+.etapes li::marker { color: var(--or); font-family: var(--titre); }
+
+.fiche {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 40px;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-block: 1px solid rgba(184,150,62,.35);
+  max-width: 980px;
+  font-family: var(--titre);
+  font-size: .85rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.fiche strong { color: var(--or-clair); font-weight: 700; }
+
+/* --------------------------------------------------------------------------
+   Pied de page
+   -------------------------------------------------------------------------- */
+
+.pied {
+  padding: 56px 0 40px;
+  background: var(--noir) url("../images/motif.webp") center / 770px auto repeat;
+  border-top: 1px solid rgba(184,150,62,.3);
+  text-align: center;
+  color: var(--gris);
+  font-size: 1rem;
+}
+.pied img { width: 72px; margin: 0 auto 16px; }
+.pied__liens {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+  font-family: var(--titre);
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.pied__liens a:hover { color: var(--or-clair); }
+.pied small { display: block; font-style: italic; }
+
+/* --------------------------------------------------------------------------
+   Animations d'apparition
+   -------------------------------------------------------------------------- */
+
+.apparition { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+.apparition.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .apparition { opacity: 1; transform: none; transition: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .cartes { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 800px) {
+  .nav__bouton { display: block; position: relative; z-index: 2; }
+
+  .nav__liste {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    background: rgba(5,5,5,.97) url("../images/motif.webp") center / 600px auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+  }
+  .nav__liste a { font-size: 1.4rem; }
+
+  .nav.ouvert .nav__liste { opacity: 1; visibility: visible; }
+  .nav.ouvert .icone-menu { display: none; }
+  .nav.ouvert .icone-fermer { display: block; }
+
+  .du-mois { grid-template-columns: 1fr; }
+  .du-mois__image { min-height: 420px; }
+  .du-mois__texte { padding: 56px 16px 72px; }
+
+  .bloc,
+  .bloc--inverse { grid-template-columns: 1fr; justify-items: center; padding: 40px 0; }
+  .bloc--inverse .medaillon { order: 0; }
+  .bloc .medaillon { width: 180px; }
+  .bloc > div { width: 100%; }
+  .bloc h2 { text-align: center; }
+}
+
+@media (max-width: 520px) {
+  .cartes { grid-template-columns: 1fr; }
+  .heros__logo { width: 88px; height: 88px; }
+  .a-la-une { padding: 72px 0; }
+}
